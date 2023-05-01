@@ -57,7 +57,7 @@ export default function Home({ listTrending, listPopular }) {
           <label className="flex py-3 px-8 max-sm:px-4 ml-6 max-sm:ml-3 max-w-[400px] self-center gap-2 items-center bg-neutral-800 relative rounded-full max-sm:max-w-[225px] max-sm:mr-1 ">
             <input
               type="text"
-              className=" bg-neutral-800 px-4 mr-4 outline-0 max-sm:max-w-[130px]"
+              className=" bg-neutral-800 px-4 mr-4 outline-0 max-sm:max-w-[90px]"
               placeholder="Buscar Livro, etc..."
               value={busca}
               onChange={(event) => {

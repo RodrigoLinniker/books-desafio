@@ -34,9 +34,9 @@ export function Header({ session, children, page }: HeaderProps) {
           <div>
             <Link href="/favoritos">
               <div className="flex gap-2 cursor-pointer hover:text-gray-500">
-                <h1 className="text-right">Favoritos</h1>
+                <h1 className="text-right max-sm:text-sm">Favoritos</h1>
 
-                <SiBookstack size={25} />
+                <SiBookstack size={25} className="max-md:hidden" />
               </div>
             </Link>
           </div>
@@ -55,7 +55,7 @@ export function Header({ session, children, page }: HeaderProps) {
                   <div className={`flex ${page ? "" : "max-sm:hidden"}`}>
                     <Image
                       src={urlImage}
-                      className=" rounded-full ring-2 ring-[#111111] "
+                      className=" rounded-full ring-2 ring-[#111111]  "
                       width="45px"
                       height="45px"
                       alt="avatar"
@@ -64,11 +64,14 @@ export function Header({ session, children, page }: HeaderProps) {
                 ) : (
                   <CgProfile className="max-sm:hidden sm:w-8 sm:h-8 lg:w-10 lg:h-10 " />
                 )}
+                <button
+                  className="hover:text-gray-500"
+                  onClick={() => signOut()}
+                >
+                  {" "}
+                  Sair
+                </button>
               </div>
-              <button className="hover:text-gray-500" onClick={() => signOut()}>
-                {" "}
-                Sair
-              </button>
             </>
           )}
         </div>
