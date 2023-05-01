@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#1D1D1D] text-white;
+}
+
+div.swiper-button-prev,
+div.swiper-button-next {
+  @apply text-white;
+}
+
+.swiper-button-disabled {
+  @apply opacity-40 cursor-not-allowed;
+}
