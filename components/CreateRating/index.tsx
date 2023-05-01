@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
 import api from "../../services/httpService";
 import { toast } from "react-toastify";
@@ -12,7 +12,9 @@ interface CreateRating {
 export function CreateRating({ bookId, userId, rating }) {
   const [comment, setComment] = useState("");
 
-  const createNewHabit = async () => {
+  const createNewHabit = async (event: FormEvent) => {
+    event.preventDefault();
+
     try {
       if (userId) {
         await api.post("/api/createreview", {
