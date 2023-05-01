@@ -108,7 +108,7 @@ export default function BookItem({ info }: { info: InfoBook }) {
                   bookId={info.id}
                   rating={clickedRating}
                   userId={session?.user?.id}
-                  handleOpenFalse={handleOpenFalse()}
+                  handleOpenFalse={handleOpenFalse}
                 />
               </Dialog.Content>
             </Dialog.Portal>

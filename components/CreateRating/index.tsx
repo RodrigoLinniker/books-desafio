@@ -25,13 +25,16 @@ export function CreateRating({ bookId, userId, rating, handleOpenFalse }) {
           comment: comment,
         });
         toast.success("Review salva com sucesso", { autoClose: 2000 });
+        handleOpenFalse();
       } else {
         toast.error("Error user unexist", { autoClose: 2000 });
+        handleOpenFalse();
       }
     } catch (error) {
       toast.error("Não pode criar 2 reviews do mesmo livro", {
         autoClose: 2000,
       });
+      handleOpenFalse();
       console.error(error);
     }
   };
@@ -56,7 +59,6 @@ export function CreateRating({ bookId, userId, rating, handleOpenFalse }) {
 
       <button
         type="submit"
-        onClick={() => handleOpenFalse}
         className="mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500 transition-colors focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-zinc-900"
       >
         <AiOutlineCheck size={20} />
