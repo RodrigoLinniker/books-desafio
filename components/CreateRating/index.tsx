@@ -8,8 +8,9 @@ interface CreateRating {
   bookId: string;
   userId: string;
   rating: string;
+  handleOpenFalse: () => void;
 }
-export function CreateRating({ bookId, userId, rating }) {
+export function CreateRating({ bookId, userId, rating, handleOpenFalse }) {
   const [comment, setComment] = useState("");
 
   const createNewHabit = async (event: FormEvent) => {
@@ -55,6 +56,7 @@ export function CreateRating({ bookId, userId, rating }) {
 
       <button
         type="submit"
+        onClick={() => handleOpenFalse}
         className="mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500 transition-colors focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-zinc-900"
       >
         <AiOutlineCheck size={20} />

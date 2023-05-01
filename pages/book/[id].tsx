@@ -43,6 +43,10 @@ export default function BookItem({ info }: { info: InfoBook }) {
     setHoverRating(0);
   };
 
+  const handleOpenFalse = () => {
+    setIsOpen(false);
+  };
+
   const handleClick = (index: number) => {
     if (session) {
       setClickedRating(index);
@@ -104,6 +108,7 @@ export default function BookItem({ info }: { info: InfoBook }) {
                   bookId={info.id}
                   rating={clickedRating}
                   userId={session?.user?.id}
+                  handleOpenFalse={handleOpenFalse()}
                 />
               </Dialog.Content>
             </Dialog.Portal>
